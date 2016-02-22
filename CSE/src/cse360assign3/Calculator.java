@@ -11,9 +11,13 @@ public class Calculator {
 	/** Accumulator for calculations */
 	private int total;
 	
+	/** Accumulator for history */
+	private String strHistory;
+	
 	/** Create an empty calculator */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		strHistory = "0 "; 
 	}
 	
 	/**
@@ -32,6 +36,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total += value;
+		strHistory += "+ " + value + " ";
 	}
 	
 	/**
@@ -41,6 +46,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total -= value;
+		strHistory += "- " + value + " ";
 	}
 	
 	/**
@@ -50,6 +56,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total *= value;
+		strHistory += "* " + value + " ";
 	}
 	
 	/**
@@ -62,6 +69,8 @@ public class Calculator {
 			total = 0;
 		else
 			total = total / value;
+		
+		strHistory += "/ " + value + " ";
 	}
 	
 	/**
@@ -70,6 +79,6 @@ public class Calculator {
 	 *  
 	 */
 	public String getHistory () {
-		return "";
+		return strHistory += "= "+getTotal();
 	}
 }

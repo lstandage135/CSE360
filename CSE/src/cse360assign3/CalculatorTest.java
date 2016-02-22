@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import cse360assign2.OrderedIntList;
-
 public class CalculatorTest {
 
 	@Test
@@ -64,7 +62,13 @@ public class CalculatorTest {
 	
 	@Test
 	public void testGetHistory() {
-		fail("Not yet implemented");
+		Calculator calc = new Calculator();
+		calc.add (4);
+		calc.subtract (2);
+		calc.multiply (2);
+		calc.add(5);
+		
+		assertEquals("0 + 4 - 2 * 2 + 5 = 9", calc.getHistory());
 	}
 
 }
